@@ -6,14 +6,14 @@
         id        = "be.hostingbvba.demo10"
         version   = "1.0.0">
 
-    <name>Pushberichten</name>
+    <name>Deweer Gallery</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Application Deweer Gallery
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author href="http://my-websitebuilder.com" email="support@my-websitebuilder.com">
+        My-Websitebuilder Team
     </author>
 
     <!--

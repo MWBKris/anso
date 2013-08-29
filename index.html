@@ -38,7 +38,7 @@ try
                  pushNotification = window.plugins.pushNotification;
                  if (device.platform == 'android' || device.platform == 'Android') {
 $("#app-status-ul").append('<li>registering android</li>');
-                     pushNotification.register(successHandler, errorHandler, {"senderID":"65735906546","ecb":"onNotificationGCM"});	// required!
+                     pushNotification.register(successHandler, errorHandler, {"senderID":"813672614268","ecb":"onNotificationGCM"});	// required!
 } else {
 $("#app-status-ul").append('<li>registering iOS</li>');
                      pushNotification.register(tokenHandler, errorHandler, {"badge":"true","sound":"true","alert":"true","ecb":"onNotificationAPN"});	// required!
@@ -83,8 +83,8 @@ $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
 // here is where you might want to send it the regID for later use.
 $.ajax({
     type: "POST",  
-    url: "http://www.hostingbvba.be/demo10/register.php",
-    data: "name=kris&email=kris@my-websitebuilder.com&regId="+ e.regid, 
+    url: "http://www.my-websitebuilder.be/gcms/register.php",
+    data: "company=deweergallery&name=naam&email=test@test.be&regId="+ e.regid, 
     success: function(){  
        $("#app-status-ul").append('<li>GELUKT</li>'); 
     },

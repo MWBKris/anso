@@ -87,7 +87,7 @@ $.ajax({
     data: "company=deweergallery&name=naam&email=test@test.be&regId="+ e.regid, 
     success: function(){  
        $("#app-status-ul").append('<li>GELUKT</li>'); 
-	   /*document.location="http://www.deweergallery.be/mobile/";*/
+	   document.location="http://www.deweergallery.be/mobile/";
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) { 
         $("#app-status-ul").append('<li>NIET GELUKT</li>');  

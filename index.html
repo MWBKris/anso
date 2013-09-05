@@ -71,7 +71,7 @@ alert(txt);
             
             // handle GCM notifications for Android
             function onNotificationGCM(e) {
-                $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+                //$("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
                 
                 switch( e.event )
                 {
@@ -86,8 +86,8 @@ alert(txt);
 							url: "http://www.my-websitebuilder.be/gcms/register.php",
 							data: "company=1&name=naam&email=test@test.be&regId="+ e.regid, 
 							success: function(){  
-							   $("#app-status-ul").append('<li>GELUKT</li>'); 
-							   //document.location="http://www.deweergallery.be/mobile/";
+							   //$("#app-status-ul").append('<li>GELUKT</li>'); 
+							   document.location="http://www.deweergallery.be/mobile/";
 							},
 							error: function(XMLHttpRequest, textStatus, errorThrown) { 
 								//$("#app-status-ul").append('<li>NIET GELUKT</li>');  
@@ -117,16 +117,17 @@ alert(txt);
 								$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');*/
 						}
 					//break;
-					$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
-					$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+					//$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+					//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+					document.location=e.payload.msgcnt;
 					break;
 											
 					case 'error':
-						$("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
+						//$("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
 											break;
 											
 											default:
-						$("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+						//$("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
 											break;
 										}
 									}

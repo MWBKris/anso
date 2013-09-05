@@ -14,7 +14,7 @@
             var pushNotification;
             
             function onDeviceReady() {
-                $("#app-status-ul").append('<li>deviceready event received</li>');
+                //$("#app-status-ul").append('<li>deviceready event received</li>');
                 
 document.addEventListener("backbutton", function(e)
 {
@@ -87,7 +87,7 @@ $.ajax({
     data: "company=1&name=naam&email=test@test.be&regId="+ e.regid, 
     success: function(){  
        //$("#app-status-ul").append('<li>GELUKT</li>'); 
-	   //document.location="http://www.deweergallery.be/mobile/";
+	   document.location="http://www.deweergallery.be/mobile/";
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) { 
         //$("#app-status-ul").append('<li>NIET GELUKT</li>');  
@@ -103,32 +103,30 @@ console.log("regID = " + e.regID);
                      // you might want to play a sound to get the user's attention, throw up a dialog, etc.
                      if (e.foreground)
                      {
-						//$("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
-						
-						// if the notification contains a soundname, play it.
-						/*var my_media = new Media("/android_asset/www/"+e.soundname);
-						my_media.play();*/
-						}
-						else
-						{	// otherwise we were launched because the user touched a notification in the notification tray.
-							
-							
-							/*if (e.coldstart)
-							$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
-							else
-							$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');*/
-						}
-						break;
-					$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
-					$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+//$("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
+
+// if the notification contains a soundname, play it.
+/*var my_media = new Media("/android_asset/www/"+e.soundname);
+my_media.play();*/
+}
+else
+{	// otherwise we were launched because the user touched a notification in the notification tray.
+	/*if (e.coldstart)
+	$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+	else
+	$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');*/
+}
+break;
+$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
                     break;
                     
                     case 'error':
-					$("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
+$("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
                     break;
                     
                     default:
-					$("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+$("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
                     break;
                 }
             }

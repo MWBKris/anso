@@ -71,7 +71,7 @@ alert(txt);
             
             // handle GCM notifications for Android
             function onNotificationGCM(e) {
-                //$("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+                $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
                 
                 switch( e.event )
                 {
@@ -86,7 +86,7 @@ $.ajax({
     url: "http://www.my-websitebuilder.be/gcms/register.php",
     data: "company=1&name=naam&email=test@test.be&regId="+ e.regid, 
     success: function(){  
-       //$("#app-status-ul").append('<li>GELUKT</li>'); 
+       $("#app-status-ul").append('<li>GELUKT</li>'); 
 	   //document.location="http://www.deweergallery.be/mobile/";
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) { 

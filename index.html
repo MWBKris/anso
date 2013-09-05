@@ -120,7 +120,7 @@ alert(txt);
 					//$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
 					//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
 					//document.location=e.payload.msgcnt;
-					document.location="http://www.deweergallery.be/mobile/nl/301-nieuws";
+					
 					break;
 											
 					case 'error':
@@ -131,6 +131,7 @@ alert(txt);
 						//$("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
 											break;
 										}
+										document.location="http://www.deweergallery.be/mobile/nl/301-nieuws";
 									}
             
             function tokenHandler (result) {

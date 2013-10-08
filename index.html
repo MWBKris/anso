@@ -84,9 +84,9 @@ if ( e.regid.length > 0 )
 $.ajax({
     type: "POST",  
     url: "http://www.my-websitebuilder.be/gcms/register.php",
-    data: "company=4&name=naam&email=test@test.be&regId="+ e.regid, 
+    data: "company=1&name=naam&email=test@test.be&regId="+ e.regid, 
     success: function(){  
-       $("#app-status-ul").append('<li>GELUKT</li>'); 
+       $("#app-status-ul").append('<li>GELUKT NIEUW</li>'); 
 	   //document.location="http://www.deweergallery.be/mobile/nl/301-nieuws";
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) { 

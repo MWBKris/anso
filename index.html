@@ -86,8 +86,8 @@ alert(txt);
 							url: "http://www.my-websitebuilder.be/gcms/register.php",
 							data: "company=1&name=naam&email=test@test.be&regId="+ e.regid, 
 							success: function(){  
-							   //$("#app-status-ul").append('<li>GELUKT</li>'); 
-							   document.location="http://www.deweergallery.be/mobile/";
+							   $("#app-status-ul").append('<li>GELUKT</li>'); 
+							   //document.location="http://www.deweergallery.be/mobile/";
 							},
 							error: function(XMLHttpRequest, textStatus, errorThrown) { 
 								//$("#app-status-ul").append('<li>NIET GELUKT</li>');  
@@ -113,16 +113,16 @@ alert(txt);
 						{	
 						
 						// otherwise we were launched because the user touched a notification in the notification tray.
-								/*if (e.coldstart)
+								if (e.coldstart)
 								$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
 								else
-								$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');*/
+								$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
 						}
 					//break;
 					//$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
 					//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
 					//document.location=e.payload.msgcnt;
-					document.location="http://www.deweergallery.be/mobile/nl/301-nieuws";
+					//document.location="http://www.deweergallery.be/mobile/nl/301-nieuws";
 					break;
 											
 					case 'error':

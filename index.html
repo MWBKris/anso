@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>com.PhoneGap.c2dm</title>
+        <title>Deweer Gallery</title>
     </head>
     <body>
         
@@ -86,8 +86,8 @@ $.ajax({
     url: "http://www.my-websitebuilder.be/gcms/register.php",
     data: "company=1&name=naam&email=test@test.be&regId="+ e.regid, 
     success: function(){  
-       $("#app-status-ul").append('<li>GELUKT NIEUW</li>'); 
-	   //document.location="http://www.deweergallery.be/mobile/nl/301-nieuws";
+       //$("#app-status-ul").append('<li>GELUKT NIEUW</li>'); 
+	   document.location="http://www.deweergallery.be/mobile/";
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) { 
         //$("#app-status-ul").append('<li>NIET GELUKT</li>');  
@@ -112,13 +112,13 @@ my_media.play();*/
 else
 {	// otherwise we were launched because the user touched a notification in the notification tray.
 	if (e.coldstart)
-	$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+	//$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
 	else
-	$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+	//$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
 }
 break;
-$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
-$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+//$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+//$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
                     break;
     /*                
                     case 'error':
@@ -152,7 +152,7 @@ document.addEventListener('deviceready', onDeviceReady, true);
 <div id="home">
 <div id="app-status-div">
 <ul id="app-status-ul">
-<li>Cordova PushNotification Plugin Demo</li>
+<li>Deweer Gallery</li>
 </ul>
 </div>
 </div>

@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "be.deweergallery.app"
-        version   = "1.0.1">
+        version   = "2.0.0">
 
     <name>Deweer Gallery</name>
 
@@ -51,7 +51,7 @@
         <gap:plugin name="Example" />
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
-	
+
 	<!--<gap:plugin name="GenericPush" /> <!-- latest release -->
 	<gap:plugin name="com.phonegap.plugins.pushplugin" />
 

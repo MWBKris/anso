@@ -1,0 +1,129 @@
+* {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+/* hacks */
+
+button::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner {
+    padding: 0 !important;
+    border: 0 none !important;
+}
+
+#body {
+    background-color: #555;
+    color: #ccc;
+    font-family: sans-serif;
+}
+
+menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* forms */
+
+label {
+    clear: both;
+    display: inline-block;
+    margin-bottom: 5px;
+    width: 120px;
+}
+
+input[type="email"],
+input[type="file"],
+input[type="text"],
+textarea {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 5px;
+    width: calc(100% - 140px);
+}
+
+input[type="email"],
+input[type="text"],
+textarea {
+    padding: 3px 5px;
+}
+
+input[type="file"] {
+    border-color: transparent;
+}
+
+textarea {
+    height: 100px;
+    vertical-align: top;
+}
+
+.formError {
+    border-color: #f00 !important;
+}
+
+.button {
+    background-color: #333;
+	background: linear-gradient(to bottom, #ccc 0%, #eee 100%);
+	border: 2px solid #ccc;
+    border-radius: 5px;
+	box-shadow: inset 3px 3px 5px 0 rgba(255,255,255,0.25),
+		inset -3px -3px 5px 0 rgba(0,0,0,0.25);
+    color: #333;
+    display: block;
+    margin: 5px 20px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.center {
+    text-align: center;
+}
+
+.fullScreen {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+.mainWindow {
+	display: block;
+}
+
+.notMainWindow {
+	display: none;
+	min-height: 300px;
+}
+
+.standardPadding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.standardPadding .button {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+#iFrame iframe {
+	border: none;
+	overflow: hidden;
+    width: 100%;
+}
+
+#mainLogo {
+    margin-bottom: 20px;
+    max-width: 50%;
+}
+
+#directions {
+	background-color: #eee;
+}

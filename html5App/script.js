@@ -75,7 +75,7 @@ var positionCalculator = {
 	bottomFiller: function() {
 		var topPosition = $('.notMainWindow:visible .bottomFiller').position();
 		var availableHeight = $('.notMainWindow:visible').outerHeight();
-		$('.bottomFiller').height(availableHeight - topPosition.top);
+		$('.bottomFiller').height(availableHeight - $('.notMainWindow:visible .untriggerIframe').outerHeight());
 	}
 };
 
@@ -118,32 +118,33 @@ var interfaceSwitcher = {
 				positionCalculator.bottomFiller();
 			});
 
-			
+
 			$(document).ready(function() {
 				$('#map').gmap({'center': endlocation.center, 'zoom': endlocation.zoom, 'disableDefaultUI':true, 'callback': function() {
 				themap = this;
 
+				navigator.geolocation.getCurrentPosition(handle_geolocation_query);
+
 				$('#getDirections').click(function() {
 					themap.displayDirections(
-						{ 'origin': start, 'destination': destination, 'travelMode': google.maps.DirectionsTravelMode.DRIVING, 'unitSystem':google.maps.UnitSystem.METRIC }, 
-						{ 'panel': document.getElementById('directions')}, 
+						{ 'origin': start, 'destination': destination, 'travelMode': google.maps.DirectionsTravelMode.DRIVING, 'unitSystem':google.maps.UnitSystem.METRIC },
+						{ 'panel': document.getElementById('directions')},
 						function(response, status) {
 							( status === 'OK' ) ? $('#results').show() : $('#results').hide();
 						});
 						return false;
 					});
 				}});
-				navigator.geolocation.getCurrentPosition(handle_geolocation_query);
-			});	
-				
+			});
+
 
 			return false;
 		});
         $('#showPhotoForm').click(function() {
             $('.mainWindow').fadeOut();
-                                  
+
             $('#photoForm').fadeIn();
-            
+
             return false;
         });
 	},
@@ -155,10 +156,10 @@ var interfaceSwitcher = {
 		});
 	}
 };
-			
-function handle_geolocation_query(position){  
+
+function handle_geolocation_query(position){
 	lat = parseInt(position.coords.latitude*10000,10)/10000;
-	lon = parseInt(position.coords.longitude*10000,10)/10000;   
+	lon = parseInt(position.coords.longitude*10000,10)/10000;
 	start = new google.maps.LatLng(lat, lon);
 	themap.get('map').panTo(start);
 //	start = "Bournemouth Airport Bournemouth Airport Ltd (BOH), Hurn, Christchurch BH23 6DF";
@@ -260,10 +261,10 @@ $(window).resize(function() {
 function var_dump(obj, name) {
   this.result = "[ " + name + " ]\n";
   this.indent = 0;
- 
+
   this.dumpLayer = function(obj) {
     this.indent += 2;
- 
+
     for (var i in obj) {
       if(typeof(obj[i]) == "object") {
         this.result += "\n" +
@@ -276,14 +277,14 @@ function var_dump(obj, name) {
           ": " + obj[i] + "\n";
       }
     }
- 
+
     this.indent -= 2;
   }
- 
+
   this.showResult = function() {
 	  console.log(this.result);
   }
- 
+
   this.dumpLayer(obj);
   this.showResult();
 }

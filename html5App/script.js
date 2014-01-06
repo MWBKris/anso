@@ -127,6 +127,8 @@ var interfaceSwitcher = {
 
 				$('#getDirections').click(function() {
 					alert('Display directions');
+					alert(start);
+					alert(destination);
 					themap.displayDirections(
 						{ 'origin': start, 'destination': destination, 'travelMode': google.maps.DirectionsTravelMode.DRIVING, 'unitSystem':google.maps.UnitSystem.METRIC },
 						{ 'panel': document.getElementById('directions')},
@@ -168,15 +170,19 @@ function handle_geolocation_query(position){
 
 var geoLocator = {
 	getCurrentLocation: function() {
-		navigator.geolocation.getCurrentPosition(function(pos) {
-			var latitde = pos.coords.latitude;
-			var longitude = pos.coords.longitude;
-			//alert('Your current coordinates (latitide,longitude) are : ' + latitde + ', ' + longitude);
-			mainData.currentLat = latitude;
-			mainData.currentLong = longitude;
-		}, function() {
-			alert('Could not find location');
-		});
+		if (navigator.geolocation) {
+			alert('Geeolocation not supported by your device');
+		} else {
+			navigator.geolocation.getCurrentPosition(function(pos) {
+				var latitde = pos.coords.latitude;
+				var longitude = pos.coords.longitude;
+				//alert('Your current coordinates (latitide,longitude) are : ' + latitde + ', ' + longitude);
+				mainData.currentLat = latitude;
+				mainData.currentLong = longitude;
+			}, function() {
+				alert('Could not find location');
+			});
+		}
 	}
 };
 

@@ -121,22 +121,27 @@ var interfaceSwitcher = {
 
 			$(document).ready(function() {
 				$('#map').gmap({'center': endlocation.center, 'zoom': endlocation.zoom, 'disableDefaultUI':true, 'callback': function() {
-				themap = this;
+					themap = this;
 
-				navigator.geolocation.getCurrentPosition(handle_geolocation_query);
+					if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(handle_geolocation_query);
 
-				$('#getDirections').click(function() {
-					alert('Display directions');
-					alert(start);
-					alert(destination);
-					themap.displayDirections(
-						{ 'origin': start, 'destination': destination, 'travelMode': google.maps.DirectionsTravelMode.DRIVING, 'unitSystem':google.maps.UnitSystem.METRIC },
-						{ 'panel': document.getElementById('directions')},
-						function(response, status) {
-							( status === 'OK' ) ? $('#results').show() : $('#results').hide();
+						$('#getDirections').click(function() {
+							alert('Display directions');
+							alert(start);
+							alert(destination);
+							themap.displayDirections(
+								{ 'origin': start, 'destination': destination, 'travelMode': google.maps.DirectionsTravelMode.DRIVING, 'unitSystem':google.maps.UnitSystem.METRIC },
+								{ 'panel': document.getElementById('directions')},
+								function(response, status) {
+									( status === 'OK' ) ? $('#results').show() : $('#results').hide();
+								}
+							);
+							return false;
 						});
-						return false;
-					});
+					} else {
+						alert('Geolocation not supported on your device');
+					}
 				}});
 			});
 

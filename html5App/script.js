@@ -126,6 +126,7 @@ var interfaceSwitcher = {
 				navigator.geolocation.getCurrentPosition(handle_geolocation_query);
 
 				$('#getDirections').click(function() {
+					alert('Display directions');
 					themap.displayDirections(
 						{ 'origin': start, 'destination': destination, 'travelMode': google.maps.DirectionsTravelMode.DRIVING, 'unitSystem':google.maps.UnitSystem.METRIC },
 						{ 'panel': document.getElementById('directions')},
@@ -158,8 +159,8 @@ var interfaceSwitcher = {
 };
 
 function handle_geolocation_query(position){
-	lat = parseInt(position.coords.latitude*10000,10)/10000;
-	lon = parseInt(position.coords.longitude*10000,10)/10000;
+	var lat = parseInt(position.coords.latitude*10000,10)/10000;
+	var lon = parseInt(position.coords.longitude*10000,10)/10000;
 	start = new google.maps.LatLng(lat, lon);
 	themap.get('map').panTo(start);
 //	start = "Bournemouth Airport Bournemouth Airport Ltd (BOH), Hurn, Christchurch BH23 6DF";

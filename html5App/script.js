@@ -124,37 +124,17 @@ var interfaceSwitcher = {
 					themap = this;
 
 					if (navigator.geolocation) {
-						alert('Geolocation should be available');
 						geoLocator.getCurrentLocation();
-						alert('out');
-						alert('in2')
 						navigator.geolocation.getCurrentPosition(function(position) {
 							mainData.currentLat = parseInt(position.coords.latitude * 10000, 10) / 10000;
 							mainData.currentLong = parseInt(position.coords.longitude * 10000, 10) / 10000;
 							start = new google.maps.LatLng(mainData.currentLat, mainData.currentLong);
-							alert('Start: ' + start);
 							themap.get('map').panTo(start);
 						});
-						alert('Lat: ' + mainData.currentLat);
-						alert('Lon: ' + mainData.currentLong);
 						start = new google.maps.LatLng(mainData.currentLat, mainData.currentLong);
 						themap.get('map').panTo(start);
-						alert('out2');
 
 						$('#getDirections').click(function() {
-							geoLocator.getCurrentLocation();
-							navigator.geolocation.getCurrentPosition(function(position) {
-								mainData.currentLat = parseInt(position.coords.latitude * 10000, 10) / 10000;
-								mainData.currentLong = parseInt(position.coords.longitude * 10000, 10) / 10000;
-								start = new google.maps.LatLng(mainData.currentLat, mainData.currentLong);
-								themap.get('map').panTo(start);
-							});
-							start = new google.maps.LatLng(mainData.currentLat, mainData.currentLong);
-							themap.get('map').panTo(start);
-
-							alert('Display directions');
-							alert(start);
-							alert(destination);
 							themap.displayDirections(
 								{ 'origin': start, 'destination': destination, 'travelMode': google.maps.DirectionsTravelMode.DRIVING, 'unitSystem':google.maps.UnitSystem.METRIC },
 								{ 'panel': document.getElementById('directions')},

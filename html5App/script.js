@@ -131,7 +131,7 @@ var interfaceSwitcher = {
 					themap = this;
 
 					if (navigator.geolocation) {
-						geoLocator.getCurrentLocation();
+//						geoLocator.getCurrentLocation();
 						navigator.geolocation.getCurrentPosition(function(position) {
 							mainData.currentLat = parseInt(position.coords.latitude * 10000, 10) / 10000;
 							mainData.currentLong = parseInt(position.coords.longitude * 10000, 10) / 10000;
@@ -177,30 +177,25 @@ var interfaceSwitcher = {
 	}
 };
 
-function handleGeolocationQuery(position){
-	var lat = parseInt(position.coords.latitude * 10000, 10) / 10000;
-	alert('Lat: ' + lat);
-	var lon = parseInt(position.coords.longitude * 10000, 10) / 10000;
-	alert('Lon: ' + lon);
-	start = new google.maps.LatLng(lat, lon);
-	alert('Start: ' + start);
-	themap.get('map').panTo(start);
-}
+//function handleGeolocationQuery(position){
+//	var lat = parseInt(position.coords.latitude * 10000, 10) / 10000;
+//	var lon = parseInt(position.coords.longitude * 10000, 10) / 10000;
+//	start = new google.maps.LatLng(lat, lon);
+//	themap.get('map').panTo(start);
+//}
 
-var geoLocator = {
-	getCurrentLocation: function() {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			var latitde = position.coords.latitude;
-			var longitude = position.coords.longitude;
-			alert(latitde);
-			alert(longitude);
-			mainData.currentLat = latitude;
-			mainData.currentLong = longitude;
-		}, function() {
-			alert('Could not find location');
-		});
-	}
-};
+//var geoLocator = {
+//	getCurrentLocation: function() {
+//		navigator.geolocation.getCurrentPosition(function(position) {
+//			var latitude = position.coords.latitude;
+//			var longitude = position.coords.longitude;
+//			mainData.currentLat = latitude;
+//			mainData.currentLong = longitude;
+//		}, function() {
+//			alert('Could not find location');
+//		});
+//	}
+//};
 
 var formSubmitter = {
 	init: function() {

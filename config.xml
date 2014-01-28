@@ -54,8 +54,6 @@
     -->
 
 	<!--<gap:plugin name="GenericPush" /> <!-- latest release -->
-	<gap:platform name="android" />
-	<gap:platform name="windows" />
 	<gap:plugin name="com.phonegap.plugins.pushplugin" />
 	<gap:plugin name="org.apache.cordova.geolocation" />
 

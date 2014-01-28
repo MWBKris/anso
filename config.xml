@@ -54,6 +54,7 @@
 
 	<!--<gap:plugin name="GenericPush" /> <!-- latest release -->
 	<gap:plugin name="com.phonegap.plugins.pushplugin" />
+	<gap:plugin name="org.apache.cordova.geolocation" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />

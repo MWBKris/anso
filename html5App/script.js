@@ -71,6 +71,13 @@ var positionCalculator = {
 		var totalHeight = $('#fullMenu').outerHeight();
 		var menuHeight = $('#fullMenu > menu').outerHeight();
 		$('#fullMenu > menu').css('margin-top', ((totalHeight - menuHeight) / 2) + 'px');
+
+		window.setTimeout(function() {
+			// compensate for slow logo loading
+			var totalHeight = $('#fullMenu').outerHeight();
+			var menuHeight = $('#fullMenu > menu').outerHeight();
+			$('#fullMenu > menu').css('margin-top', ((totalHeight - menuHeight) / 2) + 'px');
+		}, 1000);
 	},
 	bottomFiller: function() {
 		var topPosition = $('.notMainWindow:visible .bottomFiller').position();

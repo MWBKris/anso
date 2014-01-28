@@ -120,13 +120,38 @@ var interfaceSwitcher = {
 
 
 			$(document).ready(function() {
-				$('#map').gmap({'center': endlocation.center, 'zoom': endlocation.zoom, 'disableDefaultUI':true, 'callback': function() {
+				$('#map').gmap({'center': endlocation.center, 'zoom': endlocation.zoom, 'disableDefaultUI': true, 'callback': function() {
 					themap = this;
 
 					if (navigator.geolocation) {
-						navigator.geolocation.getCurrentPosition(handleGeolocationQuery);
+						alert('Geolocation should be available');
+						geoLocator.getCurrentLocation();
+						alert('out');
+						alert('in2')
+						navigator.geolocation.getCurrentPosition(function(position) {
+							mainData.currentLat = parseInt(position.coords.latitude * 10000, 10) / 10000;
+							mainData.currentLong = parseInt(position.coords.longitude * 10000, 10) / 10000;
+							start = new google.maps.LatLng(mainData.currentLat, mainData.currentLong);
+							alert('Start: ' + start);
+							themap.get('map').panTo(start);
+						});
+						alert('Lat: ' + mainData.currentLat);
+						alert('Lon: ' + mainData.currentLong);
+						start = new google.maps.LatLng(mainData.currentLat, mainData.currentLong);
+						themap.get('map').panTo(start);
+						alert('out2');
 
 						$('#getDirections').click(function() {
+							geoLocator.getCurrentLocation();
+							navigator.geolocation.getCurrentPosition(function(position) {
+								mainData.currentLat = parseInt(position.coords.latitude * 10000, 10) / 10000;
+								mainData.currentLong = parseInt(position.coords.longitude * 10000, 10) / 10000;
+								start = new google.maps.LatLng(mainData.currentLat, mainData.currentLong);
+								themap.get('map').panTo(start);
+							});
+							start = new google.maps.LatLng(mainData.currentLat, mainData.currentLong);
+							themap.get('map').panTo(start);
+
 							alert('Display directions');
 							alert(start);
 							alert(destination);
@@ -177,19 +202,16 @@ function handleGeolocationQuery(position){
 
 var geoLocator = {
 	getCurrentLocation: function() {
-		if (navigator.geolocation) {
-			alert('Geeolocation not supported by your device');
-		} else {
-			navigator.geolocation.getCurrentPosition(function(pos) {
-				var latitde = pos.coords.latitude;
-				var longitude = pos.coords.longitude;
-				//alert('Your current coordinates (latitide,longitude) are : ' + latitde + ', ' + longitude);
-				mainData.currentLat = latitude;
-				mainData.currentLong = longitude;
-			}, function() {
-				alert('Could not find location');
-			});
-		}
+		navigator.geolocation.getCurrentPosition(function(position) {
+			var latitde = position.coords.latitude;
+			var longitude = position.coords.longitude;
+			alert(latitde);
+			alert(longitude);
+			mainData.currentLat = latitude;
+			mainData.currentLong = longitude;
+		}, function() {
+			alert('Could not find location');
+		});
 	}
 };
 

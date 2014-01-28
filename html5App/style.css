@@ -118,6 +118,10 @@ textarea {
     width: 100%;
 }
 
+#fullMenu {
+	z-index: 999;
+}
+
 #iFrame iframe {
 	border: none;
 	overflow: hidden;

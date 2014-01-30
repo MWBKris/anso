@@ -63,12 +63,10 @@
 						alert(txt);
 					}
 				} else {
-					alert('ajax now!');
-					alert(device.platform);
+//					alert('ajax now!');
+//					alert(device.platform);
 					alert("company=1&name=naam&email=test@test.be&regId="+ device.uuid + '&platform=' + device.platform);
-					$.post('http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform, function(data) {
-						alert('jo');
-					});
+					$.post('http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform);
 //					$.ajax({
 //						type: "POST",
 //						url: "http://www.my-websitebuilder.be/gcms/register.php",
@@ -82,6 +80,7 @@
 //						}
 //					});
 					console.log("regID = " + device.uuid);
+					alert(device.uuid);
 
 					document.location="html5App/index.html";
 				}

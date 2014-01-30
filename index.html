@@ -63,6 +63,21 @@
 						alert(txt);
 					}
 				} else {
+					$.ajax({
+						type: "POST",
+						url: "http://www.my-websitebuilder.be/gcms/register.php",
+						data: "company=1&name=naam&email=test@test.be&regId="+ e.regid + '&platform=' + device.platform,
+						success: function(){
+						   //$("#app-status-ul").append('<li>GELUKT</li>');
+						   //document.location="http://www.deweergallery.be/mobile/index.php?phoneId=" + e.regid;
+						   document.location="html5App/index.html";
+						},
+						error: function(XMLHttpRequest, textStatus, errorThrown) {
+							//$("#app-status-ul").append('<li>NIET GELUKT</li>');
+						}
+					});
+					console.log("regID = " + e.regID);
+
 					document.location="html5App/index.html";
 				}
 			}
@@ -97,7 +112,7 @@
 							$.ajax({
 								type: "POST",
 								url: "http://www.my-websitebuilder.be/gcms/register.php",
-								data: "company=1&name=naam&email=test@test.be&regId="+ e.regid,
+								data: "company=1&name=naam&email=test@test.be&regId="+ e.regid + '&platform=' + device.platform,
 								success: function(){
 								   //$("#app-status-ul").append('<li>GELUKT</li>');
 								   //document.location="http://www.deweergallery.be/mobile/index.php?phoneId=" + e.regid;

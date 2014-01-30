@@ -64,6 +64,8 @@
 					}
 				} else {
 					alert('ajax now!');
+					alert(device.platform);
+					alert(device.uuid);
 					$.ajax({
 						type: "POST",
 						url: "http://www.my-websitebuilder.be/gcms/register.php",

@@ -64,7 +64,7 @@
 					}
 				} else {
 					alert('Pfff, I hate WP');
-					$('#fakeAjaxCall').attr('src', 'http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform);
+					$('#fakeAjaxCall').html('<iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform + '" width="10" height="10"></iframe>');
 
 					window.setTimeout(function() {
    //					document.location="html5App/index.html";
@@ -167,7 +167,7 @@
 			Loading... One moment please
 		</div>
 
-		 <iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=123&platform=Winbrol" id="fakeAjaxCall" width="10" height="10"></iframe>
+		 <div id="fakeAjaxCall"></div>
 
     </body>
 </html>

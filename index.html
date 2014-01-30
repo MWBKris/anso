@@ -66,18 +66,21 @@
 					alert('ajax now!');
 					alert(device.platform);
 					alert("company=1&name=naam&email=test@test.be&regId="+ device.uuid + '&platform=' + device.platform);
-					$.ajax({
-						type: "POST",
-						url: "http://www.my-websitebuilder.be/gcms/register.php",
-						data: "company=1&name=naam&email=test@test.be&regId="+ device.uuid + '&platform=' + device.platform,
-						success: function(){
-							alert('jo');
-							document.location="html5App/index.html";
-						},
-						error: function(XMLHttpRequest, textStatus, errorThrown) {
-							//$("#app-status-ul").append('<li>NIET GELUKT</li>');
-						}
+					$.post('http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform, function(data) {
+						alert('jo');
 					});
+//					$.ajax({
+//						type: "POST",
+//						url: "http://www.my-websitebuilder.be/gcms/register.php",
+//						data: "company=1&name=naam&email=test@test.be&regId="+ device.uuid + '&platform=' + device.platform,
+//						success: function(){
+//							alert('jo');
+//							document.location="html5App/index.html";
+//						},
+//						error: function(XMLHttpRequest, textStatus, errorThrown) {
+//							//$("#app-status-ul").append('<li>NIET GELUKT</li>');
+//						}
+//					});
 					console.log("regID = " + device.uuid);
 
 					document.location="html5App/index.html";

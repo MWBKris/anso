@@ -24,7 +24,8 @@
 
         <!--<script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>-->
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-        <script type="text/javascript" charset="utf-8" src="js/jquery_1.5.2.min.js"></script>
+        <!--<script type="text/javascript" charset="utf-8" src="js/jquery_1.5.2.min.js"></script>-->
+		<script type="text/javascript" charset="utf-8" src="js/jquery-2.1.0.min.js"></script>
         <script type="text/javascript" src="PushNotification.js"></script>
 
         <script type="text/javascript">
@@ -65,7 +66,7 @@
 				} else {
 //					$.support.cors = true;
 					alert('Pfff, I hate WP');
-					$('#fakeAjaxCall').html('test');
+					$('#fakeAjaxCall').html('<iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform + '"></iframe>');
 
 					window.setTimeout(function() {
 						alert('Great success, I hope');

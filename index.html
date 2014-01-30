@@ -64,6 +64,8 @@
 					}
 				} else {
 					$.support.cors = true;
+					$.mobile.allowCrossDomainPages = true;
+					alert($.support.cors);
 					alert('ajax now!');
 					$.get('http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform);
 //					$.ajax({

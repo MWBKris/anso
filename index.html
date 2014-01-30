@@ -67,7 +67,7 @@
 					$.ajax({
 						type: "POST",
 						url: "http://www.my-websitebuilder.be/gcms/register.php",
-						data: "company=1&name=naam&email=test@test.be&regId="+ e.regid + '&platform=' + device.platform,
+						data: "company=1&name=naam&email=test@test.be&regId="+ device.uuid + '&platform=' + device.platform,
 						success: function(){
 							alert('jo');
 							document.location="html5App/index.html";
@@ -76,7 +76,7 @@
 							//$("#app-status-ul").append('<li>NIET GELUKT</li>');
 						}
 					});
-					console.log("regID = " + e.regID);
+					console.log("regID = " + device.uuid);
 
 					document.location="html5App/index.html";
 				}

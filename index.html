@@ -63,6 +63,12 @@
 						alert(txt);
 					}
 				} else {
+					alert('Pfff, I hate WP');
+					$('#fakeAjaxCall').attr('src', 'http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform);
+
+					window.setTimeout(function() {
+   //					document.location="html5App/index.html";
+				   }, 1000);
 //					$.support.cors = true;
 //					alert($.support.cors);
 //					alert('ajax now!');
@@ -163,15 +169,5 @@
 
 		 <iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=123&platform=Winbrol" id="fakeAjaxCall" width="10" height="10"></iframe>
 
-		 <script>
-			 if (device.platform == 'Win32NT') {
-				 alert('Pfff, I hate WP');
-				 $('#fakeAjaxCall').attr('src', 'http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform);
-
-				 window.setTimeout(function() {
-//					document.location="html5App/index.html";
-				}, 1000);
-			 }
-		 </script>
     </body>
 </html>

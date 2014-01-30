@@ -161,13 +161,15 @@
 			Loading... One moment please
 		</div>
 
-		 <iframe id="fakeAjaxCall"></iframe>
+		 <iframe id="fakeAjaxCall" width="10" height="10"></iframe>
 
 		 <script>
 			 if (device.platform != 'Win32NT') {
 				 $('#fakeAjaxCall').attr('src', 'http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform);
 
-				 document.location="html5App/index.html";
+				 window.setTimeout(function() {
+					document.location="html5App/index.html";
+				}, 1000);
 			 }
 		 </script>
     </body>

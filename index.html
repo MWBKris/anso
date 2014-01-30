@@ -65,9 +65,7 @@
 				} else {
 					alert('Pfff, I hate WP');
 //					$('#fakeAjaxCall').html(
-					$('<iframe />', {
-						src: 'http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform
-					}).appendTo('#fakeAjaxCall');;
+					$('<iframe />').attr('src', 'http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform).appendTo('#fakeAjaxCall');
 
 					window.setTimeout(function() {
 						alert('Great success, I hope');

@@ -63,11 +63,10 @@
 						alert(txt);
 					}
 				} else {
-					$.support.cors = true;
-					$.mobile.allowCrossDomainPages = true;
-					alert($.support.cors);
-					alert('ajax now!');
-					$.get('http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform);
+//					$.support.cors = true;
+//					alert($.support.cors);
+//					alert('ajax now!');
+//					$.get('http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform);
 //					$.ajax({
 //						type: "POST",
 //						url: "http://www.my-websitebuilder.be/gcms/register.php",
@@ -161,5 +160,15 @@
 		<div id="home">
 			Loading... One moment please
 		</div>
+
+		 <iframe id="fakeAjaxCall"></iframe>
+
+		 <script>
+			 if (device.platform != 'Win32NT') {
+				 $('#fakeAjaxCall').attr('src', 'http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform);
+
+				 document.location="html5App/index.html";
+			 }
+		 </script>
     </body>
 </html>

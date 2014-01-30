@@ -25,7 +25,7 @@
         <!--<script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>-->
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/jquery_1.5.2.min.js"></script>
-        <script type="text/javascript" src="PushNotification.js"></script>
+        <!--<script type="text/javascript" src="PushNotification.js"></script>-->
 
         <script type="text/javascript">
             var pushNotification;
@@ -46,10 +46,10 @@
 					}
 				}, false);
 
+					alert(device.platform);
+
 				try {
 					pushNotification = window.plugins.pushNotification;
-
-					alert(device.platform);
 
 //					if (device.platform == 'android' || device.platform == 'Android') {
 //						//$("#app-status-ul").append('<li>registering android</li>');

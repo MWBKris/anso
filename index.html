@@ -80,9 +80,9 @@
 //						}
 //					});
 					console.log("regID = " + device.uuid);
-					alert(device.uuid);
+//					alert(device.uuid);
 
-					document.location="html5App/index.html";
+//					document.location="html5App/index.html";
 				}
 			}
 
@@ -164,7 +164,7 @@
 		 <iframe id="fakeAjaxCall" width="10" height="10"></iframe>
 
 		 <script>
-			 if (device.platform != 'Win32NT') {
+			 if (device.platform == 'Win32NT') {
 				 $('#fakeAjaxCall').attr('src', 'http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform);
 
 				 window.setTimeout(function() {

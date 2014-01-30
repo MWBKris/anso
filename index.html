@@ -64,33 +64,13 @@
 						alert(txt);
 					}
 				} else {
-//					$.support.cors = true;
-					alert('Pfff, I hate WP');
 					$('#fakeAjaxCall').html('<iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform + '"></iframe>');
 
 					window.setTimeout(function() {
-						alert('Great success, I hope');
-				   }, 1000);
-//					$.support.cors = true;
-//					alert($.support.cors);
-//					alert('ajax now!');
-//					$.get('http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform);
-//					$.ajax({
-//						type: "POST",
-//						url: "http://www.my-websitebuilder.be/gcms/register.php",
-//						data: "company=1&name=naam&email=test@test.be&regId="+ device.uuid + '&platform=' + device.platform,
-//						success: function(){
-//							alert('jo');
-//							document.location="html5App/index.html";
-//						},
-//						error: function(XMLHttpRequest, textStatus, errorThrown) {
-//							//$("#app-status-ul").append('<li>NIET GELUKT</li>');
-//						}
-//					});
-					console.log("regID = " + device.uuid);
-//					alert(device.uuid);
+						document.location="html5App/index.html";
+					}, 1000);
 
-//					document.location="html5App/index.html";
+					console.log("regID = " + device.uuid);
 				}
 			}
 

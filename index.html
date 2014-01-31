@@ -67,7 +67,7 @@
 					$('#fakeAjaxCall').html('<iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform + '"></iframe>');
 
 					window.setTimeout(function() {
-						document.location="html5App/index.html";
+						document.location = "html5App/index.html";
 					}, 1000);
 
 					console.log("regID = " + device.uuid);

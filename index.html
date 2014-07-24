@@ -64,7 +64,7 @@
 						alert(txt);
 					}
 				} else {
-					$('#fakeAjaxCall').html('<iframe src="http://www.deweergallery.be/gcms/register.php?company=1&name=naam&email=test@test.be&regId=' + device.uuid + '&platform=' + device.platform + '"></iframe>');
+					$('#fakeAjaxCall').html('<iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=9&name=Demuynckagri&email=info@demuynck-agri.be&regId=' + device.uuid + '&platform=' + device.platform + '"></iframe>');
 
 					window.setTimeout(function() {
 						document.location = "html5App/index.html";
@@ -103,8 +103,8 @@
 							// here is where you might want to send it the regID for later use.
 							$.ajax({
 								type: "POST",
-								url: "http://www.deweergallery.be/gcms/register.php",
-								data: "company=1&name=naam&email=test@test.be&regId="+ e.regid + '&platform=' + device.platform,
+								url: "http://www.my-websitebuilder.be/gcms/register.php",
+								data: "company=9&name=Demuynckagri&email=info@demuynck-agri.be&regId="+ e.regid + '&platform=' + device.platform,
 								success: function(){
 								   //$("#app-status-ul").append('<li>GELUKT</li>');
 								   //document.location="http://www.deweergallery.be/mobile/index.php?phoneId=" + e.regid;

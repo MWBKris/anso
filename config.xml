@@ -3,13 +3,13 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "be.deweergallery.app"
+        id        = "be.demuynck-agri.www"
         version   = "2.0.0">
 
-    <name>Deweer Gallery</name>
+    <name>Demuynck Agri</name>
 
     <description>
-        Application Deweer Gallery
+        Application Demuynck Agri
     </description>
 
     <author href="http://my-websitebuilder.com" email="support@my-websitebuilder.com">

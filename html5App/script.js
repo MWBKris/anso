@@ -1,5 +1,5 @@
 var mainData = {
-	url: 'http://www.deweergallery.be/mobile/',
+	url: 'http://www.demuynck-agri.be/',
 	currentLat: '',
 	currentLong: '',
 };
@@ -97,10 +97,10 @@ var onlineChecker = {
     }
 };
 
-var endlocation = { 'center': '50.797184,3.43908', 'zoom': 10 }; // Google maps
+var endlocation = { 'center': '51.0602204,3.4567404,', 'zoom': 14 }; // Google maps
 var start; // Google maps
 var themap; // Google maps
-var destination = "Deweer Gallery, Tiegemstraat 6A, 8553 Otegem, Belgium"; // Google maps
+var destination = "Demuynck agri, Steenweg op Deinze 59, 9880 Aalter, Belgium"; // Google maps
 
 var interfaceSwitcher = {
 	init: function() {
@@ -217,7 +217,7 @@ var formSubmitter = {
 	       		$('#photoForm').fadeOut();
 
 	    		$.ajax({
-			        url: 'http://www.deweergallery.be/appFormReceiver.php',  //Server script to process data
+			        url: 'http://www.my-websitebuilder.be/appFormReceiver.php',  //Server script to process data
 			        type: 'POST',
 			        xhr: function() {  // Custom XMLHttpRequest
 			            var myXhr = $.ajaxSettings.xhr();

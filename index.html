@@ -103,7 +103,8 @@
 
                 switch( e.event ) {
                     case 'registered':
-                    	alert(e.regid.length);
+                    	alert(e.regid);
+                    	alert('banaan   ' + device.platform);
 						if ( e.regid.length > 0 ) {
 							//$("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
 							// Your GCM push server needs to know the regID before it can push to this device

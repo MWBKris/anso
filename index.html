@@ -54,7 +54,6 @@
 						
 						if (device.platform == 'android' || device.platform == 'Android') {
 							//$("#app-status-ul").append('<li>registering android</li>');
-							alert("stap3");
 							pushNotification.register(successHandler, errorHandler, {"senderID":"813672614268","ecb":"onNotificationGCM"});	// required!
 						} else {
 							//$("#app-status-ul").append('<li>registering iOS</li>');
@@ -104,20 +103,18 @@
 							// Your GCM push server needs to know the regID before it can push to this device
 							// here is where you might want to send it the regID for later use.
 							$.ajax({
-								type: "GET",
+								type: "POST",
 								url: "http://www.my-websitebuilder.be/gcms/register.php",
 								data: "company=9&name=demuynckagri&email=info@demuynck-agri.be&regId="+ e.regid + '&platform=' + device.platform,
 								success: function(){
-								   alert("stap5");
+		
 								   //$("#app-status-ul").append('<li>GELUKT</li>');
 								   //document.location="http://www.deweergallery.be/mobile/index.php?phoneId=" + e.regid;
 								   document.location="html5App/index.html";
 								},
 								error: function(XMLHttpRequest, textStatus, errorThrown) {
 									//$("#app-status-ul").append('<li>NIET GELUKT</li>');
-									alert('XMLHttpRequest: ' + XMLHttpRequest);
-									alert('textStatus: ' + textStatus);
-									alert('errorThrown: ' + errorThrown);
+									alert('textStatus: ' + textStatus + '       '  + 'errorThrown: ' + errorThrown);
 								}
 							});
 							console.log("regID = " + e.regID);

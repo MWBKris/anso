@@ -31,8 +31,6 @@
         <script type="text/javascript">
             var pushNotification;
 
-			alert("stap1");
-
             function onDeviceReady() {
                 //$("#app-status-ul").append('<li>deviceready event received</li>');
 
@@ -54,11 +52,8 @@
 					try {
 						pushNotification = window.plugins.pushNotification;
 						
-						alert("stap2");
-
 						if (device.platform == 'android' || device.platform == 'Android') {
 							//$("#app-status-ul").append('<li>registering android</li>');
-							alert("stap3");
 							pushNotification.register(successHandler, errorHandler, {"senderID":"813672614268","ecb":"onNotificationGCM"});	// required!
 						} else {
 							//$("#app-status-ul").append('<li>registering iOS</li>');
@@ -70,7 +65,7 @@
 						alert(txt);
 					}
 				} else {
-					$('#fakeAjaxCall').html('<iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=9&name=Demuynckagri&email=info@demuynck-agri.be&regId=' + device.uuid + '&platform=' + device.platform + '"></iframe>');
+					$('#fakeAjaxCall').html('<iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=9&name=demuynckagri&email=info@demuynck-agri.be&regId=' + device.uuid + '&platform=' + device.platform + '"></iframe>');
 
 					window.setTimeout(function() {
 						document.location = "html5App/index.html";
@@ -103,7 +98,20 @@
 
                 switch( e.event ) {
                     case 'registered':
-                    	alert("stap4");
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    	alert(e.regid.length);
+                    	
+=======
+>>>>>>> d0acdb28520f122b84bba5fdb18347d7c7bdf718
+=======
+>>>>>>> d0acdb28520f122b84bba5fdb18347d7c7bdf718
+=======
+>>>>>>> d0acdb28520f122b84bba5fdb18347d7c7bdf718
+=======
+>>>>>>> d0acdb28520f122b84bba5fdb18347d7c7bdf718
 						if ( e.regid.length > 0 ) {
 							//$("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
 							// Your GCM push server needs to know the regID before it can push to this device
@@ -111,15 +119,16 @@
 							$.ajax({
 								type: "POST",
 								url: "http://www.my-websitebuilder.be/gcms/register.php",
-								data: "company=9&name=Demuynckagri&email=info@demuynck-agri.be&regId="+ e.regid + '&platform=' + device.platform,
+								data: "company=9&name=demuynckagri&email=info@demuynck-agri.be&regId="+ e.regid + '&platform=' + device.platform,
 								success: function(){
-								   alert("stap5");
+		
 								   //$("#app-status-ul").append('<li>GELUKT</li>');
 								   //document.location="http://www.deweergallery.be/mobile/index.php?phoneId=" + e.regid;
 								   document.location="html5App/index.html";
 								},
 								error: function(XMLHttpRequest, textStatus, errorThrown) {
 									//$("#app-status-ul").append('<li>NIET GELUKT</li>');
+									alert('textStatus: ' + textStatus + '       '  + 'errorThrown: ' + errorThrown);
 								}
 							});
 							console.log("regID = " + e.regID);

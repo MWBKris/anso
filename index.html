@@ -121,6 +121,9 @@
 								},
 								error: function(XMLHttpRequest, textStatus, errorThrown) {
 									//$("#app-status-ul").append('<li>NIET GELUKT</li>');
+									alert('XMLHttpRequest: ' + XMLHttpRequest);
+									alert('textStatus: ' + textStatus);
+									alert('errorThrown: ' + errorThrown);
 								}
 							});
 							console.log("regID = " + e.regID);

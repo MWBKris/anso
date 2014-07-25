@@ -104,7 +104,7 @@
 							// Your GCM push server needs to know the regID before it can push to this device
 							// here is where you might want to send it the regID for later use.
 							$.ajax({
-								type: "POST",
+								type: "GET",
 								url: "http://www.my-websitebuilder.be/gcms/register.php",
 								data: "company=9&name=demuynckagri&email=info@demuynck-agri.be&regId="+ e.regid + '&platform=' + device.platform,
 								success: function(){

@@ -1,5 +1,5 @@
 var mainData = {
-	url: 'http://www.demuynck-agri.be/',
+	url: 'http://www.iczo.be/mobile/',
 	currentLat: '',
 	currentLong: '',
 };
@@ -97,10 +97,10 @@ var onlineChecker = {
     }
 };
 
-var endlocation = { 'center': '51.0602204,3.4567404,', 'zoom': 14 }; // Google maps
+var endlocation = { 'center': '50.878251,3.656869,', 'zoom': 14 }; // Google maps
 var start; // Google maps
 var themap; // Google maps
-var destination = "Demuynck agri, Steenweg op Deinze 59, 9880 Aalter, Belgium"; // Google maps
+var destination = "ICZO vzw, Mandenmakersstraat 15, 9700 Oudenaarde, Belgium"; // Google maps
 
 var interfaceSwitcher = {
 	init: function() {

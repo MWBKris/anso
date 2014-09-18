@@ -3,13 +3,13 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "be.demuynck-agri.www"
-        version   = "2.0.0">
+        id        = "be.iczo.www"
+        version   = "1.0.0">
 
-    <name>Demuynck Agri</name>
+    <name>ICZO</name>
 
     <description>
-        Application Demuynck Agri
+        ICZO heeft een ruim aanbod aan trainingen en cursussen, voor diverse (para)medische en medisch opgeleide doelgroepen. Droom jij ervan om opnieuw te gaan studeren? ICZO vzw biedt je de mogelijkheid.
     </description>
 
     <author href="http://my-websitebuilder.com" email="support@my-websitebuilder.com">

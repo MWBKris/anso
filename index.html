@@ -51,7 +51,7 @@
 				if (device.platform != 'Win32NT') {
 					try {
 						pushNotification = window.plugins.pushNotification;
-						
+
 						if (device.platform == 'android' || device.platform == 'Android') {
 							//$("#app-status-ul").append('<li>registering android</li>');
 							pushNotification.register(successHandler, errorHandler, {"senderID":"813672614268","ecb":"onNotificationGCM"});	// required!
@@ -65,7 +65,7 @@
 						alert(txt);
 					}
 				} else {
-					$('#fakeAjaxCall').html('<iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=9&name=demuynckagri&email=info@demuynck-agri.be&regId=' + device.uuid + '&platform=' + device.platform + '"></iframe>');
+					$('#fakeAjaxCall').html('<iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=22&name=iczo&email=info@iczobe&regId=' + device.uuid + '&platform=' + device.platform + '"></iframe>');
 
 					window.setTimeout(function() {
 						document.location = "html5App/index.html";
@@ -105,9 +105,9 @@
 							$.ajax({
 								type: "POST",
 								url: "http://www.my-websitebuilder.be/gcms/register.php",
-								data: "company=9&name=demuynckagri&email=info@demuynck-agri.be&regId="+ e.regid + '&platform=' + device.platform,
+								data: "company=22&name=iczo&email=info@iczo.be&regId="+ e.regid + '&platform=' + device.platform,
 								success: function(){
-		
+
 								   //$("#app-status-ul").append('<li>GELUKT</li>');
 								   //document.location="http://www.deweergallery.be/mobile/index.php?phoneId=" + e.regid;
 								   document.location="html5App/index.html";

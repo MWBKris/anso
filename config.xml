@@ -30,7 +30,7 @@
     <preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
-    <!--<preference name="phonegap-version"           value="2.9.0" />          <!-- all: current version of PhoneGap -->
+    <!--<preference name="phonegap-version"           value="2.9.0" />        all: current version of PhoneGap -->
 	<preference name="phonegap-version"           value="3.3.0" />          <!-- all: current version of PhoneGap -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
@@ -53,7 +53,7 @@
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
 
-	<!--<gap:plugin name="GenericPush" /> <!-- latest release -->
+	<!--<gap:plugin name="GenericPush" /> latest release -->
 	<gap:plugin name="com.phonegap.plugins.pushplugin" />
 	<gap:plugin name="org.apache.cordova.geolocation" />
 	<gap:plugin name="org.apache.cordova.device" />
@@ -94,7 +94,7 @@
 
         Otherwise, you can specify specific domains:
     -->
-    <!--<access origin="http://127.0.0.1*"/> <!-- allow local pages -->
+    <!--<access origin="http://127.0.0.1*"/> allow local pages -->
     <access origin="*" />
     <!--
         <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/

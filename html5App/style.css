@@ -16,7 +16,7 @@ input[type="reset"]::-moz-focus-inner {
 }
 
 #body {
-    background-color: #555;
+    /*background-color: #555;*/
     color: #ccc;
     font-family: sans-serif;
 }

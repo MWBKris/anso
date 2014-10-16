@@ -65,7 +65,7 @@
 						alert(txt);
 					}
 				} else {
-					$('#fakeAjaxCall').html('<iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=22&name=iczo&email=info@iczobe&regId=' + device.uuid + '&platform=' + device.platform + '"></iframe>');
+					$('#fakeAjaxCall').html('<iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=23&name=anso&email=info@ansobe&regId=' + device.uuid + '&platform=' + device.platform + '"></iframe>');
 
 					window.setTimeout(function() {
 						document.location = "html5App/index.html";
@@ -105,7 +105,7 @@
 							$.ajax({
 								type: "POST",
 								url: "http://www.my-websitebuilder.be/gcms/register.php",
-								data: "company=22&name=iczo&email=info@iczo.be&regId="+ e.regid + '&platform=' + device.platform,
+								data: "company=23&name=anso&email=info@anso.be&regId="+ e.regid + '&platform=' + device.platform,
 								success: function(){
 
 								   //$("#app-status-ul").append('<li>GELUKT</li>');

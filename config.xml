@@ -3,13 +3,13 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "be.iczo.www"
+        id        = "be.anso.www"
         version   = "1.0.0">
 
-    <name>ICZO</name>
+    <name>Anso Resto & Bistro</name>
 
     <description>
-        ICZO heeft een ruim aanbod aan trainingen en cursussen, voor diverse (para)medische en medisch opgeleide doelgroepen. Droom jij ervan om opnieuw te gaan studeren? ICZO vzw biedt je de mogelijkheid.
+        Restaurant-Bistro Anso, reeds meer dan 35 jaar een gevestigde culinaire waarde in een aangenaam, rustiek kader te Geraardsbergen. U kan genieten van een excellente keuken, we serveren lunch en U kan er à la carte eten.
     </description>
 
     <author href="http://my-websitebuilder.com" email="support@my-websitebuilder.com">

@@ -105,6 +105,7 @@ var destination = "Anso, Markt 2, 9500 Geraardsbergen, Belgium"; // Google maps
 var interfaceSwitcher = {
 	init: function() {
 		$('.triggerIframe').click(function() {
+			$('#iFrame').attr(src, $(this).attr('href'));
 			$('.mainWindow').fadeOut();
 
 			$('#iFrame').fadeIn(function () {

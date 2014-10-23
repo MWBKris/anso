@@ -1,5 +1,5 @@
 var mainData = {
-	url: 'http://www.iczo.be/mobile/',
+	url: 'http://www.anso-resto.be/mobile/',
 	currentLat: '',
 	currentLong: '',
 };

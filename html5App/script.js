@@ -264,10 +264,15 @@ $(document).load(function() {
 });
 
 $(document).ready(function() {
+    alert('test');
 	setLanguage.init();
     $.getJSON('http://www.anso-resto.be/mobile/nl/api/getButtons', function(json, textStatus) {
         $.each(json.buttons, function(index, val) {
-            $('menu').append('<li><a href="'+$(this).url+'" class="button triggerIframe lblViewSite">'+$(this).title+'</a></li>')
+
+            alert('test');
+            alert(val);
+            alert($(this));
+            $('menu').append('<li><a href="'+$(this).url+'" class="button triggerIframe lblViewSite">Test</a></li>')
         });
 
         positionCalculator.doFullMenu();

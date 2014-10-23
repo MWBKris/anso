@@ -132,49 +132,49 @@ var interfaceSwitcher = {
 
 					if (navigator.geolocation) {
 //						geoLocator.getCurrentLocation();
-						navigator.geolocation.getCurrentPosition(function(position) {
-							mainData.currentLat = parseInt(position.coords.latitude * 10000, 10) / 10000;
-							mainData.currentLong = parseInt(position.coords.longitude * 10000, 10) / 10000;
-							start = new google.maps.LatLng(mainData.currentLat, mainData.currentLong);
-							themap.get('map').panTo(start);
-						});
-						start = new google.maps.LatLng(mainData.currentLat, mainData.currentLong);
-						themap.get('map').panTo(start);
+navigator.geolocation.getCurrentPosition(function(position) {
+ mainData.currentLat = parseInt(position.coords.latitude * 10000, 10) / 10000;
+ mainData.currentLong = parseInt(position.coords.longitude * 10000, 10) / 10000;
+ start = new google.maps.LatLng(mainData.currentLat, mainData.currentLong);
+ themap.get('map').panTo(start);
+});
+start = new google.maps.LatLng(mainData.currentLat, mainData.currentLong);
+themap.get('map').panTo(start);
 
-						$('#getDirections').click(function() {
-							themap.displayDirections(
-								{ 'origin': start, 'destination': destination, 'travelMode': google.maps.DirectionsTravelMode.DRIVING, 'unitSystem':google.maps.UnitSystem.METRIC },
-								{ 'panel': document.getElementById('directions')},
-								function(response, status) {
-									( status === 'OK' ) ? $('#results').show() : $('#results').hide();
-								}
-							);
-							return false;
-						});
-					} else {
-						alert('Geolocation not supported on your device');
-					}
-				}});
-			});
+$('#getDirections').click(function() {
+ themap.displayDirections(
+    { 'origin': start, 'destination': destination, 'travelMode': google.maps.DirectionsTravelMode.DRIVING, 'unitSystem':google.maps.UnitSystem.METRIC },
+    { 'panel': document.getElementById('directions')},
+    function(response, status) {
+       ( status === 'OK' ) ? $('#results').show() : $('#results').hide();
+   }
+   );
+ return false;
+});
+} else {
+  alert('Geolocation not supported on your device');
+}
+}});
+});
 
 
-			return false;
-		});
-        $('#showPhotoForm').click(function() {
-            $('.mainWindow').fadeOut();
+return false;
+});
+$('#showPhotoForm').click(function() {
+    $('.mainWindow').fadeOut();
 
-            $('#photoForm').fadeIn();
+    $('#photoForm').fadeIn();
 
-            return false;
-        });
-	},
-	returnToMenu: function() {
-		$('.mainWindow').fadeIn();
+    return false;
+});
+},
+returnToMenu: function() {
+  $('.mainWindow').fadeIn();
 
-		$('.notMainWindow').fadeOut(function() {
-			positionCalculator.doFullMenu();
-		});
-	}
+  $('.notMainWindow').fadeOut(function() {
+     positionCalculator.doFullMenu();
+ });
+}
 };
 
 //function handleGeolocationQuery(position){
@@ -213,14 +213,14 @@ var formSubmitter = {
 			});
 
 			if (valid) {
-	       		var formData = new FormData($('form')[0]);
-	       		$('#photoForm').fadeOut();
+              var formData = new FormData($('form')[0]);
+              $('#photoForm').fadeOut();
 
-	    		$.ajax({
+              $.ajax({
 			        url: 'http://www.my-websitebuilder.be/appFormReceiver.php',  //Server script to process data
 			        type: 'POST',
 			        xhr: function() {  // Custom XMLHttpRequest
-			            var myXhr = $.ajaxSettings.xhr();
+                     var myXhr = $.ajaxSettings.xhr();
 			            if(myXhr.upload){ // Check if upload property exists
 			                myXhr.upload.addEventListener('progress', progressHandlingFunction, false); // For handling the progress of the upload
 			            }
@@ -240,17 +240,17 @@ var formSubmitter = {
 			        processData: false
 			    });
 
-	        	$form.children().each(function() {
-	        		$(this).val('');
-	        	});
-	        	alert(labels.lblFormSubmitted);
-	        	interfaceSwitcher.returnToMenu();
-    		} else {
-    			alert(labels.lblPleaseFillInAllFielts);
-    		}
-		    return false;
-		});
-	}
+              $form.children().each(function() {
+                 $(this).val('');
+             });
+              alert(labels.lblFormSubmitted);
+              interfaceSwitcher.returnToMenu();
+          } else {
+             alert(labels.lblPleaseFillInAllFielts);
+         }
+         return false;
+     });
+}
 };
 
 function progressHandlingFunction(e){
@@ -265,10 +265,16 @@ $(document).load(function() {
 
 $(document).ready(function() {
 	setLanguage.init();
-	positionCalculator.doFullMenu();
-    onlineChecker.init();
-    interfaceSwitcher.init();
-    formSubmitter.init();
+    $.getJSON('http://www.anso-resto.be/mobile/nl/api/getButtons', function(json, textStatus) {
+        $.each(json.buttons, function(index, val) {
+            $('menu').append('<li><a href="'+$(this).url+'" class="button triggerIframe lblViewSite">'+$(this).title+'</a></li>')
+        });
+
+        positionCalculator.doFullMenu();
+        onlineChecker.init();
+        interfaceSwitcher.init();
+        formSubmitter.init();
+    });
 });
 
 $(window).resize(function() {
@@ -286,23 +292,23 @@ function var_dump(obj, name) {
     for (var i in obj) {
       if(typeof(obj[i]) == "object") {
         this.result += "\n" +
-          "              ".substring(0,this.indent) + i +
-          ": " + "\n";
+        "              ".substring(0,this.indent) + i +
+        ": " + "\n";
         this.dumpLayer(obj[i]);
-      } else {
+    } else {
         this.result +=
-          "              ".substring(0,this.indent) + i +
-          ": " + obj[i] + "\n";
-      }
+        "              ".substring(0,this.indent) + i +
+        ": " + obj[i] + "\n";
     }
+}
 
-    this.indent -= 2;
-  }
+this.indent -= 2;
+}
 
-  this.showResult = function() {
-	  console.log(this.result);
-  }
+this.showResult = function() {
+ console.log(this.result);
+}
 
-  this.dumpLayer(obj);
-  this.showResult();
+this.dumpLayer(obj);
+this.showResult();
 }

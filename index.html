@@ -49,10 +49,13 @@
 				}, false);
 
 				if (device.platform != 'Win32NT') {
+					alert('device is geen windows');
 					try {
 						pushNotification = window.plugins.pushNotification;
+						alert('PN set');
 
 						if (device.platform == 'android' || device.platform == 'Android') {
+							alert('tis android');
 							//$("#app-status-ul").append('<li>registering android</li>');
 							pushNotification.register(successHandler, errorHandler, {"senderID":"813672614268","ecb":"onNotificationGCM"});	// required!
 						} else {

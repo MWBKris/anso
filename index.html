@@ -67,14 +67,6 @@
 						txt+="Error description: " + err.message + "\n\n";
 						alert(txt);
 					}
-				} else {
-					$('#fakeAjaxCall').html('<iframe src="http://www.my-websitebuilder.be/gcms/register.php?company=23&name=anso&email=info@ansobe&regId=' + device.uuid + '&platform=' + device.platform + '"></iframe>');
-
-					window.setTimeout(function() {
-						document.location = "html5App/index.html";
-					}, 1000);
-
-					console.log("regID = " + device.uuid);
 				}
 			}
 
@@ -100,7 +92,7 @@
             function onNotificationGCM(e) {
                 //$("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
 		alert('Notificatie ontvangen Android');
-		alert(JSON.stringify(e.event));
+		alert(JSON.stringify(e));
                 switch( e.event ) {
                     case 'registered':
 						if ( e.regid.length > 0 ) {

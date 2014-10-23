@@ -267,8 +267,7 @@ $(document).ready(function() {
 	setLanguage.init();
     $.getJSON('http://www.anso-resto.be/mobile/nl/api/getButtons', function(json, textStatus) {
         $.each(json.buttons, function(index, val) {
-            alert(JSON.stringify($(this)));
-            $('menu').append('<li><a href="'+$(this).url+'" class="button triggerIframe lblViewSite">'+val.url+'</a></li>')
+            $('menu').append('<li><a href="'+val.url+'" class="button triggerIframe lblViewSite">'+val.title+'</a></li>')
         });
 
         positionCalculator.doFullMenu();

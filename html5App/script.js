@@ -97,10 +97,10 @@ var onlineChecker = {
     }
 };
 
-var endlocation = { 'center': '50.878251,3.656869,', 'zoom': 14 }; // Google maps
+var endlocation = { 'center': '50.7680998,3.8942298,', 'zoom': 14 }; // Google maps
 var start; // Google maps
 var themap; // Google maps
-var destination = "ICZO vzw, Mandenmakersstraat 15, 9700 Oudenaarde, Belgium"; // Google maps
+var destination = "Anso, Markt 2, 9500 Geraardsbergen, Belgium"; // Google maps
 
 var interfaceSwitcher = {
 	init: function() {
@@ -264,14 +264,10 @@ $(document).load(function() {
 });
 
 $(document).ready(function() {
-    alert('test');
 	setLanguage.init();
     $.getJSON('http://www.anso-resto.be/mobile/nl/api/getButtons', function(json, textStatus) {
         $.each(json.buttons, function(index, val) {
-
-            alert('test');
-            alert(val);
-            alert($(this));
+            alert(JSON.stringify($(this)));
             $('menu').append('<li><a href="'+$(this).url+'" class="button triggerIframe lblViewSite">Test</a></li>')
         });
 

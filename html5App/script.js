@@ -162,6 +162,7 @@ $('#getDirections').click(function() {
 return false;
 });
 $('#showPhotoForm').click(function() {
+	alert('clicked')
     $('.mainWindow').fadeOut();
 
     $('#photoForm').fadeIn();

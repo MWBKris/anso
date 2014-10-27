@@ -269,7 +269,7 @@ $(document).ready(function() {
 	setLanguage.init();
     $.getJSON('http://www.anso-resto.be/mobile/nl/api/getButtons', function(json, textStatus) {
     	alert(json);
-    	if (json.button != null) {
+    	if (json.buttons != null) {
     		alert('er staat iets in');
 	        $.each(json.buttons, function(index, val) {
 	        	alert(val.title)
